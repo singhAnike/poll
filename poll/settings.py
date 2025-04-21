@@ -138,6 +138,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
-
 MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
