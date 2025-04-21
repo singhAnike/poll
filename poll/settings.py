@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ["127.0.0.1", "localhost", "poll-0dzq.onrender.com"]
 # Application definition
 
 INSTALLED_APPS = [
-    "polls",
+    "polls.apps.PollsConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
