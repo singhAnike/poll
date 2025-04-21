@@ -2,7 +2,7 @@ from django.db import models
 
 class AdminBase(models.Model):
     admin_name = models.CharField(max_length=200)
-    admin__id = models.CharField(max_length=20)
+    admin_id = models.CharField(max_length=20)
 
 
     def __str__(self):
