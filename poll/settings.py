@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4r*#=*m)9tiq1m7r((wto6@qvkj=%6mc*va7_a$72qs^(2pxa3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", "poll-0dzq.onrender.com"]
 
@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ["127.0.0.1", "localhost", "poll-0dzq.onrender.com"]
 # Application definition
 
 INSTALLED_APPS = [
-    "polls.apps.PollsConfig",
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
