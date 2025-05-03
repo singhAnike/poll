@@ -1,4 +1,5 @@
 from django.contrib.auth.models import Group, User
+from .models import Question, Choice
 from rest_framework import serializers
 
 
@@ -12,3 +13,15 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ['url', 'name']
+
+class Question(serializers.HyperlinkedModelSerializer):
+    
+    class Meta:
+        model = Question
+        fields = ['question_text', 'pub_date']
+
+class Choise(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = Choice
+        fields = ['question', 'choice_text', 'votes']
