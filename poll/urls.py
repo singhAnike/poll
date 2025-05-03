@@ -39,12 +39,13 @@ router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 
 
-from  polls.views import UserViewSet, GroupViewSet
+from  polls.views import UserViewSet, GroupViewSet, Question, Choice
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
-
+router.register(r'question', Question)
+router.register(r'choise', Choice)
 
 urlpatterns = [
     path('', include(router.urls)),
