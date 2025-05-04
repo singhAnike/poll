@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Question
+from .models import Question as ModelQuestion, Choice as ModelChoice
 
 def detail(request, question_id):
     return HttpResponse("You're looking at question %s." % question_id)
@@ -26,9 +26,9 @@ def index(request):
 
 from django.contrib.auth.models import Group, User
 from rest_framework import permissions, viewsets
-from .models import Choice, Question
+from .models import Question
 
-from .serializers import GroupSerializer, UserSerializer, Question, Choice
+from .serializers import GroupSerializer, UserSerializer, Question as QuestionSerilizer, Choise as ChoiceSerializers
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -49,11 +49,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated] 
 
 class QuestionViewSet(viewsets.ModelViewSet):
-    queryset = Question.objects.all()
-    serializer_class = Question
+    queryset = ModelQuestion.objects.all()
+    serializer_class = QuestionSerilizer
     permission_classes = [permissions.IsAuthenticated]
 
 class ChoiseViewSet(viewsets.ModelViewSet):
-    queryset = Choice.objects.all()
-    serializer_class = Choice
+    queryset = ModelChoice.objects.all()
+    serializer_class = ChoiceSerializers
     permission_classes = [permissions.IsAuthenticated]

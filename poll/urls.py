@@ -38,14 +38,13 @@ class UserViewSet(viewsets.ModelViewSet):
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 
-
-from  polls.views import UserViewSet, GroupViewSet, Question, Choice
+from  polls.views import UserViewSet, GroupViewSet, QuestionViewSet, ChoiseViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
-router.register(r'question', Question)
-router.register(r'choise', Choice)
+router.register(r'question', QuestionViewSet)
+router.register(r'choice', ChoiseViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
